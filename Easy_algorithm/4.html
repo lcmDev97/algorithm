@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    //풀이 1
+    function solution(a,b) {
+        let sum = 0
+        if (a > b) {
+            let up = a
+            let under = b
+            for (let i = under; i <= up; i++) {
+                sum += i
+            }
+        } else if (a < b) {
+            let up = b
+            let under = a
+            for (let i = under; i <= up; i++) {
+                sum += i
+            }
+        }else if (a=b){
+            sum += a
+        }
+        return sum
+    }
+
+    // 풀이2
+    // function solution(a,b){
+    //     if(a === b){
+    //         return a
+    //     }else
+    //     let average = (a+b) / 2
+    //     let number = Math.abs(a-b)
+    //     return average * number
+    // }
+
+
+</script>
+
+
+</body>
+</html>

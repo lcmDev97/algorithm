@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 풀이1
+    // function solution(numbers) {
+    //     let sum = 0
+    //     for (let i = 0; i < numbers.length; i++) {
+    //         sum += numbers[i]
+    //     }
+    //     return 45 - sum
+    // }
+
+    // 풀이2
+    function solution(numbers) {
+        return 45 - numbers.reduce((a, b) => a + b, 0);
+    }
+
+// reduce(배열안의 여러개의 값을 하나의 값으로 만들어줘서 reduce)
+// 1.reduce 매소드 아주아주강력함
+// 2.a는 누적값  c는 배열안 계산이 적용 될 값
+// 3.팁으로는 c먼저 적어두고 계산하기
+// 4. 중괄호랑 리턴 생략가능
+// 예시1)
+// [1,2,3,4].reduce( ( a , c )=>( a + c ) , 0 )
+// ()=>() 는 계산하는 함수  , 0자리는 초기값자리
+// a: 0  , c:1			 //초기값0이 처음 누적값이 된다
+// a: 1  , c:2
+// a: 3 ,  c:3
+// a: 6 , c :4
+// return 값으로 10이 나온다
+// 예시2)
+// [1,2,3,4].reduce( ( a , c)=>( a * c ) , 1 )
+// a:1 , c: 1
+// a:1 , c: 2
+// a:2 , c: 3
+// a:6 , c: 4
+// return 값으로 24나옴
+// 따라서 요약하자면 예시 1처럼 합 구해놓고 [1,2,3,4].reduce((a,c)=>(a+x) /[1.2.3.4].length) 로 평균 구하기
+//
+// 추가로:reduce로 배열의 매서드를 거의다 구현가능
+// ☆☆배열을 객체 리터럴로 바꿀거 ☆☆
+// ['철수','영희','현영','한솔'].reduce( ( a , c , i )=> { a[i] = c; return a }, {} )    //세번쨰 자리에는 i로 인덱스 자리 // 중괄호랑 리턴 바로 안만나 생략 불가
+// a:{} , c:철수 i:0			//계산할때 항상 c는 철수 ,영희,현영,한솔로 먼저
+// a:{0:'철수'} , c:영희 i:1
+// a:{0:'철수',1:'영희'}, c:현영 i:2
+// a:{2:'현영'}, c:한솔 i:3
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

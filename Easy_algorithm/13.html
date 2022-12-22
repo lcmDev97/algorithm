@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+function solution(a,b){
+    let week = ['SUN','MON','TUE','WED','THU','FRI','SAT']
+    let day_index = `2016,${a},${b}`
+    let result = week[new Date(day_index).getDay()];
+    return result;
+}
+
+
+//  설명
+// new Date(날짜문자열) : 날짜문자열 예) '2016,5,5'
+// 문자열로 값 넣는게 힘든 포인트 ==> 템플릿 리터럴 이용하면 편함
+// new Date('2022,5,15') 리턴값 => Sun May 15 2022 00:00:00 GMT+0900 (한국 표준시)
+// new Date('2022,5,15').getDay() 리턴값=> 0   즉, 0 1 2 3 4 5 6
+//                                             일,월,화,수,목,금,토
+// 따라서 week 변수를  ['SUN','MON','TUE','WED','THU','FRI','SAT'] 순서로 선언
+</script>
+
+</body>
+</html>

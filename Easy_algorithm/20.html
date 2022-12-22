@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+function solution(participant, completion) {
+    participant.sort()  // sort왼쪽처럼 쓰면 자동 오름차순
+    completion.sort()
+    for (let i = 0; i < participant.length; i++) {
+        if (participant[i] !== completion[i]) {
+            return participant[i]
+        }
+    }
+}
+
+
+
+</script>
+
+</body>
+</html>

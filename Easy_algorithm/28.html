@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// x % 각각 자릿수의 총합 == 0 이면 return true
+// x % 각각 자릿수의 총합 !=0 이면 return false 하면됨
+각각 자릿수의 합만 구하면 됨
+
+function solution(x) {
+    let sum = 0
+    let string = String(x)
+
+    for(let i = 0 ; i< string.length; i++){ //각각 자릿수의 총합
+    sum += parseInt(string[i])
+    }
+
+    if(x % sum == 0){
+        return true
+    }else{
+        return false
+    }
+}
+
+</script>
+
+
+
+
+</body>
+</html>

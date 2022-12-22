@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+풀이 1)
+function solution(s) {
+    let arr = s.split(' ')
+    arr = arr.map(v => v.split(''))
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (j % 2 == 0) {
+                arr[i][j] = arr[i][j].toUpperCase()
+            } else if (j % 2 == 1) {
+                arr[i][j] = arr[i][j].toLowerCase()
+            }
+        }
+    }
+    return arr.map( (v)=>{ return v.join('')} ).join(' ')
+}
+
+업글레이드)
+24번 라인 중괄호+ return 생략하면
+return arr.map((v)=>v.join('')).join(' ') 이렇게 됨</script>
+
+풀이2)
+</body>
+</html>

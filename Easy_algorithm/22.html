@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+풀이1)
+function solution(n) {
+    let sum = 0
+    let arr = (n + '').split('')
+    for (let i = 0; i < arr.length; i++) {
+        sum += parseInt(arr[i])
+    }
+    return sum
+}
+
+풀이2)
+
+function solution(n){
+    return (n+'').split('').reduce((acc,cur)=>{
+        return acc + parseInt(cur)
+    },0)
+}
+
+풀이2의 중괄호 + return 줄여보면
+function solution(n){
+    return (n+'').split('').reduce((acc,cur)=> acc + parseInt(cur),0)
+}
+이 된다.
+</script>
+
+</body>
+</html>

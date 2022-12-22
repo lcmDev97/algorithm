@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+꿀팁: 숫자+""하면 "숫자" 됨
+꿀팁: 문자열숫자를 ""로 나누면 배열로 담김!!!
+ex) let n = 1234
+    Stinrg(n).split('')  //리턴값: ['1', '2', '3', '4']
+
+ 풀이1)
+function solution(n) {
+    return parseInt( (n+"").split('').sort((a,b)=>(b-a)).join('') )
+}
+
+
+풀이2)
+
+    function solution(n) {
+    let answer = []
+    let answer2 = ""
+    let string = String(n)
+    for(let i = 0; i <string.length; i++){
+        answer.push(string[i])
+    }
+    answer = answer.sort((a,b)=>(b-a))
+   for(let i=0 ; i<answer.length ; i++){
+       answer2 += answer[i]
+   }
+    return parseInt(answer2)
+}
+
+
+
+</script>
+
+</body>
+</html>

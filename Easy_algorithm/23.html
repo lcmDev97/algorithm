@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+function solution(n) {
+    return String(n).split('').reverse().map(v => +v)
+}
+설명
+n= 1234 일떄
+String(n).split('').reverse() 까지는 ['4','3','2','1']이고
+String(n).split('').reverse().map(v=> +v) 하면 [4,3,2,1] 이 된다.
+    .map(v=> +v) 대신 .map( v=>parseInt(v) )
+                     .map( v=> v/1 )
+                     .map( v=> v*1 ) 도 가능
+
+</script>
+
+</body>
+</html>

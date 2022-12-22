@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+function solution(num) {
+    let answer = 0;
+
+    for(let i = 0; i < 500; i++) {    // 500번까지만 반복
+        if(num != 1) {                // 1이 아니라면
+            num = num % 2 == 0 ? num / 2 : num * 3 + 1;  //계산 진행
+        } else { // 1인 경우
+            return answer = i; // 현재 횟수를 출력
+        }
+    }
+
+    return answer = -1; // 500번을 실행했지만 return된 값이 없는 경우
+}
+
+</script>
+
+
+
+</body>
+</html>

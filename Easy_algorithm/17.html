@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<scirpt>
+    풀이1) if문 평범
+function solution(s) {
+    if (s.length === 4 || s.length === 6){
+        if( s == parseInt(s)){  //포인트1. parseInt("s1") 리턴값은 NaN / parseInt("12") 리턴값은 12
+            return true        //포인트2.  s는 문자열"1234" parseInt(s)는 숫자 1234 따라서 데이터 형까지 같아야 하는  ===는 안됨
+        }else{
+            return false
+        }
+    }else{
+        return false
+    }
+}
+
+    풀이2 ) 조건부 연산자
+function solution(s) {
+    return s.length === 4 || s.length === 6 ? (s == parseInt(s) ? true : false ) : false
+}
+
+
+</scirpt>
+
+</body>
+</html>
