@@ -1,11 +1,12 @@
 //내 풀이
-const solution = function(arr){
+const solution = function(arr) {
     let answer = []
     let order = 1
-    for(let i = 0; i<arr.length; i++){
-        for(let j= 0; j<arr.length; j++){
-            if(arr[i]<arr[j]){
-                order +=1
+
+    for(let x of arr){
+        for(let y of arr){
+            if(x < y){
+                order++
             }
         }
         answer.push(order)

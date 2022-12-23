@@ -1,27 +1,31 @@
-// const solution = function(arr){
-//     let max = 0
-//     let diagonal1 = 0
-//     let diagonal2 = 0
-//     for(let i = 0; i < arr.length; i++){
-//         for(let j = 0; j < arr.length; j++){
-//             if(i===j){
-//                 diagonal1 += arr[i][j]
-//             }else if(i+j === arr.length){
+const solution = function(arr) {
+    let max = 0
+    let sum1 = 0
+    let sum2 = 0
 
-//             }
-//         }
-//     }
-//     console.log(diagonal1)
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j < arr.length; j++){
+            sum1 += arr[j][i]    
+            sum2 += arr[i][j]
+        }
+        max = Math.max(sum1, sum2, max)
+        sum1 = sum2 = 0
+    }
 
-
-
-// }
-// let arr=[[10, 13, 10, 12, 15], 
-//          [12, 39, 30, 23, 11],
-//          [11, 25, 50, 53, 15],
-//          [19, 27, 29, 37, 27],
-//          [19, 13, 30, 13, 19]]
-// solution(arr)
+    for(let i = 0; i < arr.length; i++){
+        sum1 += arr[i][i]
+        sum2 += arr[i][arr.length - i - 1]
+    }
+    max = Math.max(sum1, sum2, max)
+    
+    console.log('정답은',max)
+}
+let arr=[[10, 13, 10, 12, 15], 
+         [12, 39, 30, 23, 11],
+         [11, 25, 50, 53, 15],
+         [19, 27, 29, 37, 27],
+         [19, 13, 30, 13, 19]]
+solution(arr)
 
 
 //답지
@@ -55,10 +59,3 @@
 //          [19, 27, 29, 37, 27],
 //          [19, 13, 30, 13, 19]]
 // console.log(solution(arr));
-
-//이해 안되서 해본거
-// for(let i = 0 ; i< 5; i++){
-//     for(let j = 0 ; j < 5; j++){
-//         console.log(j,i)
-//     }
-// }
