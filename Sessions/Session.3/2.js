@@ -1,6 +1,9 @@
 const solution = function(str){
-
-    
+    str = str.toLowerCase().replace(/[^a-z]/g, '')  //숫자도 살리고 싶을때 정규식: str = str.toLowerCase().replace(/[^a-z0-9]/g, '')
+    if( str !== str.split('').reverse().join('') ){
+        return "NO"
+    }
+    return "YES"
 }
 
 let str = "found7, time: study; Yduts; emit, 7Dnuof"
