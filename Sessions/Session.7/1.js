@@ -14,23 +14,11 @@ function solution(arr){
     return arr;
 }  
 let arr=[13, 5, 11, 7, 23, 15];
-// console.log(solution(arr));
+console.log(solution(arr));
+
 //최신 문법
 // let a = 0
 // let b = 100
 // [a, b] = [b, a]
 // a // 100
 // b // 0
-
-//내가 짠 코드
-// function test(arr){
-//     for(let i = 0; i < arr.length; i++){
-//         for(let j = i+1; j < arr.length; j++){
-//             if(arr[i] > arr[j]){
-//                 [arr[i], arr[j]] = [arr[j], arr[i]]
-//             }
-//         }
-//     }
-//     return arr
-// }
-// console.log(test(arr))
