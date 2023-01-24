@@ -2,8 +2,8 @@
 //문제 설명 그대로 파스칼 삼각형과정을 매번 다 해주면 너무 오래 걸림. => p배열 x b배열 이용
 //풀이 방법은 b배열 미리 구하고, p배열을 순열문제처럼 계속 구해 p*b값을 sum에다 넣고 f값과 비교.
 
-//let dy = Array.from(Array(n+1), () => Array(r+1).fill(0));
-//let dy = Array(n+1).fill(Array(n+1).fill(0)) 이게 더 직관적
+//2차원 배열 생성할 떄, let dy = Array.from(Array(n+1), () => Array(r+1).fill(0)); 이거보다는
+//let dy = Array(n+1).fill(Array(n+1).fill(0)) 이게 더 나한테는 직관적
 function solution(n, f){         
     let answer, flag=0;
     let dy= Array(n+1).fill(Array(n+1).fill(0))
@@ -38,7 +38,6 @@ function solution(n, f){
     DFS(0, 0);
     return answer;
 }
-
 console.log(solution(4, 16));
 
 //push, pop 이용
@@ -54,7 +53,7 @@ function solution2(n, f){
         else return dy[n][r]=combi(n-1, r-1)+combi(n-1, r);
     }
     function DFS(L, sum){
-        if(L===n) console.log(p) //테스트용
+        // if(L===n) console.log(p)
         if(flag) return;
         if(L===n && sum===f){
             answer=p.slice();
@@ -78,4 +77,4 @@ function solution2(n, f){
     DFS(0, 0);
     return answer;
 }
-console.log(test(4, 16))
+console.log(solution2(4, 16))
