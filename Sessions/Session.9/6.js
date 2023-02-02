@@ -1,6 +1,50 @@
-const solution = function(){
-
-
+//dis 배열 생성한 풀이
+function solution(s, e){  
+    let answer=0;
+    let ch=Array.from({length:10001}, ()=>0);
+    let dis=Array.from({length:10001}, ()=>0);
+    let queue=[];
+    queue.push(s);
+    ch[s]=1;
+    dis[s]=0;
+    while(queue.length){
+        let x=queue.shift();
+        for(let nx of [x-1, x+1, x+5]){
+            if(nx===e) return dis[x]+1;
+            if(nx>0 && nx<=10000 && ch[nx]===0){
+                ch[nx]=1;
+                queue.push(nx);
+                dis[nx]=dis[x]+1;
+            }
+        }
+    }
+    return answer;
 }
+console.log(solution(5, 14));
 
-solution()
+
+// L을 이용하여 상태트리를 레벨 탐색한 풀이
+function solution2(s, e){
+    let answer=0;
+    let ch=Array.from({length:10001}, ()=>0);
+    let queue=[];
+    queue.push(s);
+    ch[s]=1;
+    let L=0;
+    while(queue.length){
+        let len=queue.length;
+        for(let i=0; i<len; i++){
+            let x=queue.shift();
+            for(let nx of [x-1, x+1, x+5]){
+                if(nx===e) return L+1;
+                if(nx>0 && nx<=10000 && ch[nx]===0){
+                    ch[nx]=1;
+                    queue.push(nx);
+                }
+            }
+        }
+        L++;
+    }
+    return answer;
+}
+console.log(solution2(5, 14));
